@@ -19,7 +19,7 @@ class Fibonacci
   def gen_fib(n)
     return -1 if n < 0 #error handling
     return n if n < 2
-
+ a
     gen_fib(n-1) + gen_fib(n-2)
   end
 
@@ -28,7 +28,7 @@ class Fibonacci
     index = 1
 
     while get_fib(index) < 4000000 do 
-      sum += get_fib(index) unless !get_fib(index).even?
+      sum += get_fib(index) unless get_fib(index).odd?
       index += 1
     end
 
