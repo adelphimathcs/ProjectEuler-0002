@@ -3,32 +3,32 @@
 class Fibonacci
 
   def initialize
-    @fibNums = [0,1]
+    @fib_nums = [0,1]
   end
 
-  def getFib(n) 
+  def get_fib(n) 
     return -1 if n < 0 #error handling
-    return @fibNums[n] unless @fibNums[n].nil?
+    return @fib_nums[n] unless @fib_nums[n].nil?
 
-    num = getFib(n-1) + getFib(n-2)
+    num = get_fib(n-1) + get_fib(n-2)
 
-    @fibNums[n] = num
+    @fib_nums[n] = num
     num
   end
 
-  def genFib(n)
+  def gen_fib(n)
     return -1 if n < 0 #error handling
     return n if n < 2
 
-    genFib(n-1) + genFib(n-2)
+    gen_fib(n-1) + gen_fib(n-2)
   end
 
-  def sumEvenFib
+  def sum_even_fib
     sum = 0
     index = 1
 
-    while getFib(index) < 4000000 do 
-      sum += getFib(index) unless getFib(index) % 2 != 0
+    while get_fib(index) < 4000000 do 
+      sum += get_fib(index) unless !get_fib(index).even?
       index += 1
     end
 
@@ -38,4 +38,4 @@ class Fibonacci
 end
 
 myFib = Fibonacci.new
-puts myFib.sumEvenFib
+puts myFib.sum_even_fib
